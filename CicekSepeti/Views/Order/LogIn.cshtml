@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/LayoutPage/LayoutOrderPage.cshtml";
+}
+
+
+<div class="o-customerForm">
+
+    <div class="o-customerForm__header">
+        <h1 class="o-customerForm__title">
+            Kullanıcı Girişi
+        </h1>
+        <p class="o-customerForm__text">
+        </p>
+        <br>
+    </div>
+    <div class="o-customerForm__body">
+
+        <div class="row d-flex justify-content-center">
+
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="m-customerExtraInfo">
+                    <form action="/siparis/1/" method="post" id="siparisform" name="siparisform">
+                        <input name="productId" type="hidden" value="CS071" id="productId">
+                        <input name="locationId" type="hidden" value="341001" id="locationId">
+                        <input name="sendFormbId" type="hidden" value="346" id="sendFormbId">
+                        <input name="sendFormDate" type="hidden" value="21/04/2021" id="sendFormDate">
+                        <input name="sendFormTime" type="hidden" value="09:00-14:00" id="sendFormTime">
+                        <input name="upm" type="hidden" value="101" id="upm">
+                        <input name="mvc" type="hidden" value="0" id="mvc">
+                        <div class="m-customerExtraInfo__buttons">
+                            <a href="/Order/Order">
+                                <button type="button" class="o-button__default cmi-arrow-right">
+                                    Üye Olmadan Devam
+                                </button>
+                            </a>
+                        </div>
+                    </form>
+                    <div class="m-customerExtraInfo__or">
+                        <span>
+                            ya da
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6">
+
+                <form method="post" id="customerForm" novalidate="novalidate" class="o-form">
+
+                    <div class="o-form__groupIcon">
+                        <input type="text" id="UyeEmail" name="UyeEmail" maxlength="100" data-vv-as="E-Posta" required="required" class="m-textbox" aria-required="true" aria-invalid="false">
+                        <label for="UyeEmail" class="o-form__label">
+                            E-Posta Adresiniz
+                        </label>
+                        <i class="o-form__icon cmi-mail">
+                        </i>
+                    </div>
+                    <!---->
+                    <div class="o-form__groupIcon">
+                        <input type="password" id="UyeSifre" name="UyeSifre" maxlength="10" data-vv-as="Şifre" required="required" class="m-textbox" aria-required="true" aria-invalid="false">
+                        <label for="UyeSifre" class="o-form__label">
+                            Şifre
+                        </label>
+                        <i class="o-form__icon cmi-secure">
+                        </i>
+                    </div>
+                    <!---->
+                    <div class="o-form__button">
+                        &nbsp;
+
+                        <button type="submit" class="o-button__loginBtn cmi-arrow-right-r">
+                            Giriş Yap
+                        </button>
+
+                    </div>
+
+                </form>
+                <br>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

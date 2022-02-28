@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "OrderInformation";
+    Layout = "~/Views/LayoutPage/LayoutHomePage.cshtml";
+}
+    <div class="o-customerForm">
+        <div class="o-customerForm__header">
+            <h1 class="o-customerForm__title">Çiçek Sepeti - Sipariş Takibi</h1> <p class="o-customerForm__text">
+                Vermiş olduğunuz çiçek siparişinin durumunu öğrenmek için, lütfen aşağıdaki alanlara siparişinizi oluştururken aldığınız takip numarasını
+                ve siparişiniz esnasında belirtmiş olduğunuz e-mail adresinizi girerek Devam Et butonuna basınız.
+            </p><br>
+        </div> <div class="o-customerForm__body">
+            <div class="row d-flex justify-content-center">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <form action="/takip/2/" method="post" id="customerForm" novalidate="novalidate" class="o-form">
+                        <div class="o-form__groupIcon"><input type="text" id="siparis_no" name="siparis_no" maxlength="9" data-vv-as="Sipariş Numarası" class="m-textbox" aria-required="true" aria-invalid="false"> <label for="siparis_no" class="o-form__label">Sipariş Numaranız</label> <i class="o-form__icon cmi-menu-o"></i></div> <!----> <div class="o-form__groupIcon"><input type="text" id="gonderen_email" name="gonderen_email" maxlength="100" data-vv-as="E-Posta" class="m-textbox" aria-required="true" aria-invalid="false"> <label for="gonderen_email" class="o-form__label">E-Posta Adresiniz</label> <i class="o-form__icon cmi-mail"></i></div> <!----> <div class="o-form__button">
+                            &nbsp;
+                            <button type="submit" class="o-button__loginBtn cmi-arrow-right-r">Devam Et</button>
+                        </div>
+                    </form> <br>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,43 @@
+﻿@model CicekSepeti.Models.Table.others.OrderDetail
+@{
+    ViewBag.Title = "UserDelete";
+    Layout = "~/Views/LayoutPage/LayoutAdminNED.cshtml";
+}
+
+<h2 class="text-center">MESAJ SİLME EKRANI</h2>
+<hr />
+<div class="text-center">
+    <h2>Silmek İstediğinize Emin Misiniz?</h2>
+
+    @using (Html.BeginForm())
+    {
+        <div class="">
+            <input type="submit" value="Sil" class="btn btn-danger center-margin" />
+            @Html.ActionLink("VAZGEÇ", "Orders", "admin", new { }, new { @class = "btn center-margin" })
+        </div>
+    }
+    @*@Html.ActionLink("SİL", "urundelete", "NED", new { }, new { @class = "btn btn-danger" })*@
+
+</div>
+<hr />
+<br />
+<br />
+<div class="text-center">
+    <h2>Sipariş BİLGİSİ</h2>
+
+    <div class="center-margin" style="margin:auto;">
+        <div class="">
+
+            <span>İD:</span> <strong>@Model.id</strong>
+        </div>
+        <div class="">
+            <span>KULLANICI:</span> <strong>@Model.name</strong>
+        </div>
+   
+
+
+    </div>
+
+
+
+</div>

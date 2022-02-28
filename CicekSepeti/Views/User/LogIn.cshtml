@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/LayoutPage/LayoutHomePage.cshtml";
+}
+<div class="container">
+    <div class="o-customerForm">
+        <div class="o-customerForm__header">
+            <h1 class="o-customerForm__title">Üye Girişi</h1> <p class="o-customerForm__text">
+                Lütfen aşağıdaki alanlara üye olurken kullandığınız e-posta adresinizi ve şifrenizi girerek "Devam Et" butonuna basınız.
+            </p><br>
+        </div> <div class="o-customerForm__body">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-6 col-lg-6">
+            <form action="/uye-girisi.asp" method="post" id="customerForm" novalidate="novalidate" class="o-form">
+                <div class="o-form__groupIcon"><input type="text" id="UyeEmail" name="UyeEmail" maxlength="100" data-vv-as="E-Posta" class="m-textbox" aria-required="true" aria-invalid="false"> <label for="UyeEmail" class="o-form__label">E-Posta Adresiniz</label> <i class="o-form__icon cmi-mail"></i></div> <!----> <div class="o-form__groupIcon"><input type="password" id="UyeSifre" name="UyeSifre" maxlength="10" data-vv-as="Şifre" class="m-textbox" aria-required="true" aria-invalid="false"> <label for="UyeSifre" class="o-form__label">Şifre</label> <i class="o-form__icon cmi-secure"></i></div> <!----> <div class="o-form__button">
+                    <a href="/sifre-hatirlat.asp" rel="nofollow" class="o-button__link -underline">Şifremi Unuttum</a>
+                    &nbsp;
+                    <button type="submit" class="o-button__loginBtn cmi-arrow-right-r">Devam Et</button>
+                </div>
+            </form> <br>
+        </div>
+
+    </div><div class="text-center"> <button type="button" class="o-button__orange cmi-arrow-right text-center swiper-slide-zoomed" style="width:auto;">Kayıt OL </button></div>
+</div>
+    </div>
+</div>

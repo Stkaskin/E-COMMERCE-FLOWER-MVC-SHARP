@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "OrderPay";
+    Layout = "~/Views/LayoutPage/LayoutOrderPage.cshtml";
+}
+
+<div class="container">
+    <div class="row mb-30">
+        <div class="col-12"><div class="m-progress"><div class="m-progress__step"><div class="m-progress__bar"><div class="m-progress__barActiveStep -step4"></div></div> <div class="m-progress__item -active"><span class="m-progress__disc cmi-check"></span> <span class="m-progress__name">Sipariş Bilgileri</span></div> <div class="m-progress__item -active"><span class="m-progress__disc cmi-check"></span> <span class="m-progress__name">Kart Notu</span></div> <div class="m-progress__item -active"><span class="m-progress__disc cmi-check"></span> <span class="m-progress__name">Fatura Bilgileri</span></div> <div class="m-progress__item -active"><span class="m-progress__disc cmi-circle"></span> <span class="m-progress__name">Ödeme</span></div></div></div></div> <div class="col-12 col-md-7 col-lg-8">
+            <div class="o-payment mt-10">
+                <form action="/siparis/5/" method="post" id="deliveryForm" name="deliveryForm" novalidate="novalidate" class="o-form">
+                    <div class="o-summary__buttons"><input name="get_rsv_id" type="hidden" value="1073232" id="get_rsv_id"> <input name="strKey" type="hidden" value="HXIgK" id="strKey"> <input name="upm" type="hidden" value="101" id="upm"> <input name="pTab" type="hidden" value="1" id="pTab"> <input name="pMet" type="hidden" value="1" id="pMet"></div> <div class="o-payment__item mb-20 -active">
+                        <div class="o-payment__header cmi-"><h3 class="o-payment__title cmi-credit-card">Kredi / Banka Kartı ile Ödeme</h3></div> <div class="o-payment__body">
+                            <div class="row">
+                                <div class="col-12"><div class="o-paymentForm row"><div class="o-paymentForm__group"><label for="kartsahibi" class="o-paymentForm__label col-12 col-lg-4">Kart Sahibi</label> <input type="text" id="kartsahibi" name="kartsahibi" maxlength="75" data-vv-as="Kart Üzerindeki İsim" required="required" class="m-textbox col-12 col-lg-8" aria-required="true" aria-invalid="false"></div> <!----> <div class="o-paymentForm__group"><label for="pan" class="o-paymentForm__label col-12 col-lg-4">Kart Numarası</label> <input type="text" pattern="[0-9]*" id="pan" name="pan" maxlength="16" data-vv-as="Kart Numarası" required="required" class="m-textbox -creditCard col-12 col-lg-8" aria-required="true" aria-invalid="false"></div> <!----> <div class="o-paymentForm__group"><label for="ExpDate_Month" class="o-paymentForm__label col-12 col-lg-4">Son Kullanma</label> <div class="col-12 col-lg-8"><div class="o-paymentForm__expireDate"><div class="m-select -large -full"><select id="ExpDate_Month" name="ExpDate_Month" data-vv-as="Ay" required="required" class="m-select__control" aria-required="true" aria-invalid="false"><option value="" selected="selected">Ay</option> <option value="01">01</option> <option value="02">02</option> <option value="03">03</option> <option value="04">04</option> <option value="05">05</option> <option value="06">06</option> <option value="07">07</option> <option value="08">08</option> <option value="09">09</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option></select></div> <div class="m-select -large -full"><select id="ExpDate_Year" name="ExpDate_Year" data-vv-as="Yıl" required="required" class="m-select__control" aria-required="true" aria-invalid="false"><option value="" selected="selected">Yıl</option> <option value="21">2021</option> <option value="22">2022</option> <option value="23">2023</option> <option value="24">2024</option> <option value="25">2025</option> <option value="26">2026</option> <option value="27">2027</option> <option value="28">2028</option> <option value="29">2029</option> <option value="30">2030</option> <option value="31">2031</option> <option value="32">2032</option> <option value="33">2033</option> <option value="34">2034</option> <option value="35">2035</option></select></div></div></div></div> <!----> <!----> <div class="o-paymentForm__group"><label for="cv2" class="o-paymentForm__label col-12 col-lg-4">Güvenlik Kodu</label> <div class="col-12 col-lg-8"><div class="o-paymentForm__cvv"><input type="text" pattern="[0-9]*" id="cv2" name="cv2" maxlength="4" data-vv-as="Güvenlik Kodu" required="required" class="m-textbox -cvv" aria-required="true" aria-invalid="false"> <span class="o-paymentForm__hepler">?</span></div></div></div> <!----> <div class="o-paymentForm__agreement col-12"><div class="o-checkbox"><input type="checkbox" id="sozlesme_kkr" name="sozlesme_kkr" data-vv-as="Sözleşme" required="required" class="o-checkbox__input" aria-required="true" aria-invalid="false"> <label for="sozlesme_kkr" class="o-checkbox__label">Ön Bilgilendirme Formu <a href="javascript:void(0)">(1)</a> ve Mesafeli Satış Sözleşmesini <a href="javascript:void(0)">(2)</a> okudum ve kabul ediyorum.</label></div> <!----></div></div></div> <div class="col-12">
+                                    <div class="m-secureInfo mt-10">
+                                        <div class="m-secureInfo__text cmi-secure">
+                                            Çiçek siparişi ödemelerinizi <strong>VISA, MASTER, AMEX</strong> kredi kartları ile yapabilirsiniz. ciceksepeti.net ödeme bilgilerinizi güvende tutar. Ödeme esnasında
+                                            <strong>kredi kartı</strong> bilgileriniz hiçbir şekilde 3. kişiler tarafından görünmemektedir.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <input name="pOdeme" type="hidden" value="KKR" id="pOdemeKKR">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> <div class="col-12 col-md-5 col-lg-4">
+            <div class="o-summary__buttons"><button type="button" class="o-button -payment -nextBtn cmi-right-arrow mb-10">Devam Et</button></div> <div class="o-summary mt-10">
+                <div class="o-summary__header"><h3 class="o-summary__title">Sipariş Özeti</h3></div> <div class="o-summary__body">
+                    <div class="o-summary__item">
+                        <div class="o-summary__itemBody">
+                            <div class="o-summary__itemProduct"><span class="o-summary__itemCategory">Ürün</span> <strong class="o-summary__itemTitle">Kutuda 3 Gül</strong></div> <div class="o-summary__itemPrice">
+                                64,00 TL
+                            </div>
+                        </div> <div class="o-summary__additionalItem">
+                            <span class="o-summary__additionalTitle">
+                                Teslimat Tarihi:
+                            </span> <span class="o-summary__additionalPrice">
+                                16 Mayıs 2021 Pazar
+                            </span>
+                        </div>
+                    </div> <div class="o-summary__item"><div class="o-summary__itemBody"><div class="o-summary__itemProduct"><span class="o-summary__itemCategory">Gönderim Yeri</span> <strong class="o-summary__itemTitle">4. Levent<br>İstanbul - Avrupa</strong></div></div></div>
+                </div> <div class="o-summary__footer"><div class="o-summary__total"><div class="o-summary__totalName">Toplam Fiyat <span>(KDV Dahil)</span></div> <div class="o-summary__totalPrice">64,00 TL</div></div></div>
+            </div> <div class="o-summary__buttons"><button type="button" class="o-button -payment -nextBtn cmi-right-arrow">Devam Et</button></div>
+      <a href="/Order/veritabaninagiris"> Veritabanına ekle </a>
+        </div> <!----> <!---->
+    </div>
+</div>

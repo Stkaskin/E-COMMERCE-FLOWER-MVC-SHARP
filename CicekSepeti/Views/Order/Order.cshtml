@@ -1,0 +1,275 @@
+﻿@model CicekSepeti.Models.Model.OrderAndProduct
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/LayoutPage/LayoutOrderPage.cshtml";
+
+
+}
+<div>
+
+    <div class="container">
+
+        <div class="row mb-30">
+
+            <div class="col-12">
+                <div class="m-progress">
+                    <div class="m-progress__step">
+                        <div class="m-progress__bar">
+                            <div class="m-progress__barActiveStep -step1">
+                            </div>
+                        </div>
+                        <div class="m-progress__item -active">
+                            <span class="m-progress__disc cmi-circle">
+                            </span>
+                            <span class="m-progress__name">
+                                Sipariş Bilgileri
+                            </span>
+                        </div>
+                        <div class="m-progress__item">
+                            <span class="m-progress__disc">
+                            </span>
+                            <span class="m-progress__name">
+                                Kart Notu
+                            </span>
+                        </div>
+                        <div class="m-progress__item">
+                            <span class="m-progress__disc">
+                            </span>
+                            <span class="m-progress__name">
+                                Fatura Bilgileri
+                            </span>
+                        </div>
+                        <div class="m-progress__item">
+                            <span class="m-progress__disc">
+                            </span>
+                            <span class="m-progress__name">
+                                Ödeme
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-7 col-lg-8">
+
+                <div class="o-checkoutForm">
+
+                    <div class="o-checkoutForm__header">
+                        <h3 class="o-checkoutForm__title">
+                            Alıcının Bilgileri
+                        </h3>
+                    </div>
+                    <div class="o-checkoutForm__body">
+
+
+
+
+
+
+
+                        <form action="/Order/Control" id="form" method="post" class="o-form" onsubmit="">
+
+                            <div class="o-form__groupIcon -required">
+
+
+                                <input type="text" id="alici_ad_soyad" name="name" maxlength="100" data-vv-as="Ad Soyad" required="required" class="m-textbox" *@ aria-required="true" aria-invalid="false">
+                                <label for="alici_ad_soyad" class="o-form__label">
+                                    Alıcının Adı Soyadı
+                                </label>
+                                <i class="o-form__icon cmi-user">
+                                </i>
+                            </div>
+                            <!---->
+                            <div class="o-form__groupIcon -required">
+                                <input type="text" pattern="[0-9]*" id="alici_telefon" name="tel" maxlength="11" required="required" class="m-textbox" aria-required="true" aria-invalid="false">
+                                <label for="alici_telefon" class="o-form__label">
+                                    Alıcının Telefon Numarası
+                                </label>
+                                <i class="o-form__icon cmi-phone">
+                                </i>
+                            </div>
+                            <!---->
+                            <div class="o-form__group">
+                                <div class="m-select -large -full">
+                                    <select id="gonderim_nedeni" name="reason" required="required" class="m-select__control">
+                                        <option value="" selected="selected">
+                                            Gönderim Nedeni
+                                        </option>
+                                        <option value="1">
+                                            Doğum Günü
+                                        </option>
+                                        <option value="2">
+                                            Yeni İş / Terfi
+                                        </option>
+                                        <option value="3">
+                                            Yıl Dönümü
+                                        </option>
+                                        <option value="4">
+                                            Yeni Bebek
+                                        </option>
+                                        <option value="5">
+                                            Nişan / Düğün / Açılış
+                                        </option>
+                                        <option value="6">
+                                            Cenaze
+                                        </option>
+                                        <option value="7">
+                                            Diğer
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="o-form__group">
+
+
+                                <input type="text" id="alici_yer" name="adressname" maxlength="100" required="required" class="m-textbox">
+                                <label for="alici_yer" class="o-form__label">
+                                    Şirket veya Okul İsmi (İsteğe Bağlı)
+                                </label>
+                            </div>
+                            <div class="o-form__groupIcon -textarea -required">
+
+                                <textarea id="alici_adres" name="adress" cols="10" rows="4" maxlength="255" data-vv-as="Adres" required="required" class="m-textbox -textarea" aria-required="true" aria-invalid="false">123
+        </textarea>
+                                <label for="alici_adres" class="o-form__label -textarea">
+                                    Mahalle, sokak, cadde ve diğer bilgileri giriniz.
+                                </label>
+                                <i class="o-form__icon cmi-pin">
+                                </i>
+                            </div>
+                            <!---->
+                            <div class="text-right">
+                                4. Levent / İstanbul - Avrupa
+
+                            </div>
+                            <div class="o-summary__buttons">
+                                <input name="get_rsv_id" type="hidden" value="1070835" id="get_rsv_id">
+                                <input name="strKey" type="hidden" value="4cPju" id="strKey">
+                                <input name="upm" type="hidden" value="101" id="upm">
+                            </div>
+                            <input id="Submit-btn" type="submit" value="" style="background-color:transparent;" />
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-12 col-md-5 col-lg-4">
+
+                <div class="o-summary__buttons">
+                    <button type="button" class="o-button -payment -nextBtn cmi-right-arrow mb-10" onclick="submitsend()">
+                        Devam Et
+                    </button>
+                </div>
+                <div class="o-summary mt-10">
+
+                    <div class="o-summary__header">
+                        <h3 class="o-summary__title">
+                            Sipariş Özeti
+                        </h3>
+                    </div>
+                    <div class="o-summary__body">
+
+                        <div class="o-summary__item">
+
+                            <div class="o-summary__itemBody">
+
+                                <div class="o-summary__itemProduct">
+                                    <span class="o-summary__itemCategory">
+                                        Ürün
+                                    </span>
+                                    <strong class="o-summary__itemTitle">
+                                        @*@Model.Product.name*@
+                                    </strong>
+                                </div>
+                                <div class="o-summary__itemPrice">
+                                    @*@Model.Product.price*@
+
+
+                                </div>
+
+                            </div>
+                            <div class="o-summary__additionalItem">
+
+                                <span class="o-summary__additionalTitle">
+                                    Teslimat Tarihi:
+
+                                </span>
+                                <span class="o-summary__additionalPrice">
+                                    11 Mayıs 2021 Salı
+
+                                </span>
+
+                            </div>
+
+                        </div>
+                        <div class="o-summary__item">
+                            <div class="o-summary__itemBody">
+                                <div class="o-summary__itemProduct">
+                                    <span class="o-summary__itemCategory">
+                                        Gönderim Yeri
+                                    </span>
+                                    <strong class="o-summary__itemTitle">
+                                        4. Levent
+                                        <br>İstanbul - Avrupa
+                                    </strong>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="o-summary__footer">
+                        <div class="o-summary__total">
+                            <div class="o-summary__totalName">
+                                Toplam Fiyat
+                                <span>
+                                    (KDV Dahil)
+                                </span>
+                            </div>
+                            <div class="o-summary__totalPrice">
+                                106,00 TL
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="o-summary__buttons">
+                    <button type="button" class="o-button -payment -nextBtn cmi-right-arrow" onclick="submitsend()">
+                        Devam Et
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+
+    function submitsend() {
+        var btn = document.getElementById("Submit-btn");
+        
+        btn.click();
+    }
+    function SendCmt() {
+        alert("");
+        $.post($(this).attr('Control'), $(this).serialize(), function (json) {
+            alert(json);
+        }, 'json');
+        return false; // important to have this
+    }
+
+</script>
+
+<script src="//cdn.ciceksepeti.net/js/app/delivery.min.js?v=1.6.1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.js" integrity="sha512-HNbo1d4BaJjXh+/e6q4enTyezg5wiXvY3p/9Vzb20NIvkJghZxhzaXeffbdJuuZSxFhJP87ORPadwmU9aN3wSA==" crossorigin="anonymous"></script>

@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "OrderNote";
+    Layout = "~/Views/LayoutPage/LayoutOrderPage.cshtml";
+}
+
+<div class="container">
+
+    <div class="row mb-30">
+
+        <div class="col-12">
+            <div class="m-progress">
+                <div class="m-progress__step">
+                    <div class="m-progress__bar">
+                        <div class="m-progress__barActiveStep -step2">
+                        </div>
+                    </div>
+                    <div class="m-progress__item -active">
+                        <span class="m-progress__disc cmi-check">
+                        </span>
+                        <span class="m-progress__name">
+                            Sipariş Bilgileri
+                        </span>
+                    </div>
+                    <div class="m-progress__item -active">
+                        <span class="m-progress__disc cmi-circle">
+                        </span>
+                        <span class="m-progress__name">
+                            Kart Notu
+                        </span>
+                    </div>
+                    <div class="m-progress__item">
+                        <span class="m-progress__disc">
+                        </span>
+                        <span class="m-progress__name">
+                            Fatura Bilgileri
+                        </span>
+                    </div>
+                    <div class="m-progress__item">
+                        <span class="m-progress__disc">
+                        </span>
+                        <span class="m-progress__name">
+                            Ödeme
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-7 col-lg-8">
+            <div class="o-checkoutForm">
+                <div class="o-checkoutForm__header">
+                    <h3 class="o-checkoutForm__title">
+                        Kart Notu Ekle
+                    </h3>
+                </div>
+                <div class="o-checkoutForm__body">
+                    <form action="/Order/OrderNoteControl" method="post" class="o-form">
+                        <div class="o-form__group">
+                            <textarea id="kart_mesaji" name="Note" cols="10" rows="5" maxlength="160" onkeydown="textarealimit(this, 5, 160);" onkeyup="textarealimit(this, 5, 160);" onpaste="textarealimit(this, 5, 160);" required="required" class="m-textbox -textarea" style="overflow: hidden; resize: none;">
+                </textarea>
+                            <label for="kart_mesaji" class="o-form__label -textarea">
+                                Kart Notunuzu Yazınız
+                            </label>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-7">
+                                <div class="o-form__group">
+                                    <input type="text" id="kart_isim" name="name" maxlength="100" required="required" class="m-textbox cmi-phone">
+                                    <label for="kart_isim" class="o-form__label">
+                                        Adınız (İsteğe Bağlı)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="o-form__group">
+                                    <div class="o-checkbox">
+                                        <input type="checkbox" id="isimgizli" name="NoteActive" required="required" class="o-checkbox__input">
+                                        <label for="isimgizli" class="o-checkbox__label">
+                                            İsimsiz Gönder
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o-summary__buttons">
+                            <input name="get_rsv_id" type="hidden" value="1073232" id="get_rsv_id">
+                            <input name="strKey" type="hidden" value="HXIgK" id="strKey">
+                            <input name="upm" type="hidden" value="101" id="upm">
+                        </div>
+                        <input id="Submit-btn" type="submit" value="" style="background-color:transparent;" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-5 col-lg-4">
+
+            <div class="o-summary__buttons">
+
+                <button type="button" class="o-button -payment -nextBtn cmi-right-arrow" onclick="submitsend()">
+                    Devam Et
+
+                </button>
+
+            </div>
+            <div class="o-summary mt-10">
+
+                <div class="o-summary__header">
+                    <h3 class="o-summary__title">
+                        Sipariş Özeti
+                    </h3>
+                </div>
+                <div class="o-summary__body">
+
+                    <div class="o-summary__item">
+
+                        <div class="o-summary__itemBody">
+
+                            <div class="o-summary__itemProduct">
+                                <span class="o-summary__itemCategory">
+                                    Ürün
+                                </span>
+                                <strong class="o-summary__itemTitle">
+                                    Kutuda 3 Gül
+                                </strong>
+                            </div>
+                            <div class="o-summary__itemPrice">
+                                64,00 TL
+
+                            </div>
+
+                        </div>
+                        <div class="o-summary__additionalItem">
+
+                            <span class="o-summary__additionalTitle">
+                                Teslimat Tarihi:
+
+                            </span>
+                            <span class="o-summary__additionalPrice">
+                                16 Mayıs 2021 Pazar
+
+                            </span>
+
+                        </div>
+
+                    </div>
+                    <div class="o-summary__item">
+                        <div class="o-summary__itemBody">
+                            <div class="o-summary__itemProduct">
+                                <span class="o-summary__itemCategory">
+                                    Gönderim Yeri
+                                </span>
+                                <strong class="o-summary__itemTitle">
+                                    4. Levent
+                                    <br>İstanbul - Avrupa
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="o-summary__footer">
+                    <div class="o-summary__total">
+                        <div class="o-summary__totalName">
+                            Toplam Fiyat
+                            <span>
+                                (KDV Dahil)
+                            </span>
+                        </div>
+                        <div class="o-summary__totalPrice">
+                            64,00 TL
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="o-summary__buttons">
+
+                <button type="button" class="o-button -payment -nextBtn cmi-right-arrow" onclick="submitsend()">
+                    Devam Et
+
+                </button>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+

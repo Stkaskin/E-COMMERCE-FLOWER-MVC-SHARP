@@ -1,0 +1,1 @@
+var staticPage = new Vue({ el: "[data-productlist-content]", mixins: [searchMixins], methods: { lazyLoad: function () { new Blazy({ breakpoints: [{ width: 420, src: "data-src-small"}] }) } }, created: function () { this.lazyLoad() } });

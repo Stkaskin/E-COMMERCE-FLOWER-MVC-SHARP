@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="dns-prefetch" href="//cdn.ciceksepeti.net/" />
+    <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    <link rel="dns-prefetch" href="//www.googleadservices.com/" />
+    <link rel="dns-prefetch" href="//stats.g.doubleclick.net/" />
+    <link rel="dns-prefetch" href="//googleads.g.doubleclick.net/" />
+    <link rel="dns-prefetch" href="//connect.facebook.net" />
+    <link rel="dns-prefetch" href="//www.facebook.com/" />
+    <link rel="dns-prefetch" href="//www.google.com/" />
+    <link rel="dns-prefetch" href="//www.google.com.tr/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+ 
+    <title>Sayfa Bulunamadı</title>
+    <meta name="description" content="" />
+    <meta name="robots" content="noindex,nofollow" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3679767-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-3679767-1');
+        gtag('config', 'AW-1018293527');
+        gtag('config', 'AW-595190987');
+    </script>
+
+    <link rel="stylesheet" href="//cdn.ciceksepeti.net/css/main.min.css?v=1.6.1" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="//cdn.ciceksepeti.net/img/icons/favicon.ico" />
+    <link rel="icon" type="image/png" href="//cdn.ciceksepeti.net/img/icons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="//cdn.ciceksepeti.net/img/icons/favicon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="//cdn.ciceksepeti.net/img/icons/apple-touch-icon.png" />
+
+    <!-- 404 page fixes -->
+    <style type="text/css">
+        .m-404__content {
+          font-size: 1rem;
+          line-height: 1.5;
+          color: #2d2d2d;
+        }
+        .m-404__content h1 {
+          font-size: 1.125rem;
+          margin-bottom: 0.9375rem;
+        }
+        .m-404__content .active-color {
+          color: #F21D4D;
+        }
+    </style>
+</head>
+
+<body>
+<div class="mainContent" id="mainWrapper" data-productlist-content="productlist-content">
+<!-- mainwrap -->
+<!-- HEADER -->
+<header class="o-header" id="header">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+
+      <div class="d-none d-lg-flex col-9 col-lg-4">
+        <a class="o-header__logo" href="/">
+          <img class="o-header__logo--img" src="//cdn.ciceksepeti.net/img/ciceksepeti-logo.svg" alt="Çiçek Sepeti Logo" height="40" />
+          <!--<span class="o-header__logo--text">Çiçek Sepeti ile taze çiçekler, zamanında hızlı teslimat.</span>-->
+        </a>
+      </div>
+      <div class="mobileLogo col-8 col-lg-3">
+        <a class="o-header__logo" href="/">
+          <img class="o-header__logo--img" src="//cdn.ciceksepeti.net/img/ciceksepeti-logo-white.svg" alt="Çiçek Sepeti Logo" height="50" />
+        </a>
+      </div>
+
+      <div class="col-12 col-lg-4 d-none d-lg-block o-header__searchMobile" id="searchForm">
+        <form class="o-header__search" method="GET" action="/cicek-arama/" novalidate="novalidate" role="search" id="queryForm" @submit.prevent="validateBeforeSubmit">
+          <input class="o-header__search--input" id="query" v-on:keyup="searchProducts" v-model="search" autocomplete="off" autocorrect="off" autocapitalize="off" name="query" type="search" placeholder="Kategoriler ve ürünlerde ara" />
+          <button class="o-header__search--btn cmi-search" id="searchButton" type="submit" for="mainSearch" v-on:click="validateSearchBox"></button>
+          <div class="o-search" v-if="showSearchProductsResult" v-cloak ref="closeOutside">
+            <ul class="o-search__list">
+              <li class="o-search__list--item" v-for="item in searchProductsResult.productlist">
+                <a v-bind:href="item.deeplink" v-bind:title="item.name">{{item.name}} - <strong>{{item.price | currency}}</strong></a>
+              </li>
+            </ul>
+          </div>
+        </form>
+        <div class="o-header__popularSearch d-none d-lg-block">
+          <span class="o-header__popularSearch--title">Popüler aramalar: </span>
+          <a class="o-header__popularSearch--link" href="/cicek/" rel="nofollow">Çiçek</a>,
+          <a class="o-header__popularSearch--link" href="/cicek/orkide/" rel="nofollow">Orkide</a>,
+          <a class="o-header__popularSearch--link" href="/cicek/gul/" rel="nofollow">Gül</a>,
+          <a class="o-header__popularSearch--link" href="/cicek/saksi-cicekleri/" rel="nofollow">Saksı Çiçekleri</a>
+        </div>
+        
+      </div>
+
+      <div class="col-3 col-lg-4 d-flex justify-content-end">
+        <ul class="o-header__userInfo">
+
+          <li class="o-header__userInfo--item  d-none d-lg-flex" id="deliveryTrackingBtn">
+            <a class="o-header__userInfo--link cmi-delivery" href="/takip/" rel="nofollow">
+              <span class="o-header__userInfo--text d-none d-lg-flex">Sipariş Takibi</span>
+            </a>
+            <form action="/takip/2/" method="post">
+            <div class="o-header__dropdownWrapper">
+              <div class="o-header__dropdown -delivery">
+                <div class="o-header__delivery--item">
+                    <label class="o-header__delivery--label" for="hSiparisNo">Sipariş Numaranız <span>*</span></label>
+                    <input class="o-header__delivery--input" type="text" id="hSiparisNo" name="siparis_no" />
+                </div>
+                <div class="o-header__delivery--item">
+                    <label class="o-header__delivery--label" for="hEmailAdresi">E-Mail Adresiniz <span>*</span></label>
+                    <input class="o-header__delivery--input" type="text" id="hEmailAdresi" name="gonderen_email" />
+                </div>
+                <div class="o-header__delivery--item">
+                  <button class="o-header__delivery--btn" type="submit">SİPARİŞ TAKİBİ</button>
+                </div>
+              </div>
+            </div>
+            </form>
+          </li>
+          <li class="o-header__userInfo--item d-none d-lg-flex" id="accountBtn">
+             <a class="o-header__userInfo--link cmi-user" href="javascript:void(0)">
+              <span class="o-header__userInfo--text d-none d-lg-flex">Üyelik</span>
+            </a>
+            <div class="o-header__dropdownWrapper">
+              <ul class="o-header__dropdown -account">
+                  <li class="o-header__account--item">
+                  <a class="o-header__account--link cmi-user" href="/uye-girisi.asp" rel="nofollow">Üye Girişi</a>
+                </li>
+                <li class="o-header__account--item">
+                  <a class="o-header__account--link cmi-plus" href="/uye-ol.asp" rel="nofollow">Üye Ol</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="o-header__userInfo--item d-lg-none">
+            <a class="o-header__userInfo--link cmi-search" id="searchBtn" href="javascript:void(0)" rel="nofollow"></a>
+          </li>
+          <!--
+          <li class="o-header__userInfo--item">
+            <a class="o-header__userInfo--link cmi-cart" href="/sepetim" rel="nofollow">
+              <span class="o-header__userInfo--count">1</span>
+              <span class="o-header__userInfo--text d-none d-lg-flex">Sepetim</span>
+            </a>
+          </li>
+          -->
+        </ul>
+      </div>
+
+    </div>
+  </div>
+  <div class="d-lg-none" id="burgerBtn"></div>
+</header>
+
+<!-- inject:header_menu -->
+<nav class="o-megaMenu" id="mainMenu">
+  <div class="container">
+    <ul class="o-megaMenu__nav">
+      <li class="o-megaMenu__logo">
+        <a href="/"><img class="o-megaMenu__logo--img" src="//cdn.ciceksepeti.net/img/ciceksepeti-logo-icon.svg" alt="Çiçek Sepeti Logo" /></a>
+      </li>
+      <!--
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-gift" href="/cicek/yeni-yil-cicegi/">YENİ YIL</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-love" href="/cicek/sevgililer-gunu-cicek/">SEVGİLİLER GÜNÜ</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-gift" href="/cicek/kadinlar-gunu-cicek/">KADINLAR GÜNÜ</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-gift" href="/cicek/tip-bayrami-doktorlara-cicekler/">TIP BAYRAMI</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-love" href="/cicek/anneler-gunu-cicek/">ANNELER GÜNÜ</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-gift" href="/cicek/babalar-gunu/">BABALAR GÜNÜ</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-gift" href="/cicek/ogretmenler-gunu/">ÖĞRETMENLER GÜNÜ</a></li>
+      -->
+      <li class="o-megaMenu__item">
+        <a class="o-megaMenu__item--link cmi-flower" id="menuOpenMobile" href="/cicek/">ÇİÇEKLER</a>
+        <!-- <a class="o-megaMenu__item--link cmi-flower d-flex d-md-none" href="javascript:void(0)">ÇİÇEK</a> -->
+        <div class="o-subMenuContent">
+          <div class="o-subMenuContent__title d-flex d-lg-none cmi-arrow-left">ANA MENÜ</div>
+          <div class="row o-subMenuContent__scroller">
+            <ul class="o-subMenu col-12 col-lg-2">
+              <li class="o-subMenu__item--title">AMACA GÖRE</li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/sevgiliye-cicek/">Sevgi ve Aşk</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/dogum-gunu-cicekleri/">Doğum Günü</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/acilis-toren-cicekleri/">Açılış - Tören</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/gecmis-olsun-cicekleri/">Geçmiş Olsun</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/yeni-ise-cicek/">Yeni İş - Terfi</a></li>
+            </ul>
+            <ul class="o-subMenu -fitTop col-12 col-lg-2">
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/nikah-dugun-cicekleri/">Nikah Düğün</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/anneler-icin-cicekler/">Anneler İçin</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/yeni-bebek-cicekleri/">Doğum - Yeni Bebek</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/cenaze-celenkleri/">Cenaze Çelenkleri</a></li>
+            </ul>
+            <ul class="o-subMenu col-12 col-lg-2">
+              <li class="o-subMenu__item--title">ÜRÜNE GÖRE</li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/orkide/">Orkide</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/gul/">Gül</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/saksi-cicekleri/">Saksı Çiçekleri</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/cicek-sepeti/">Çiçek Sepeti</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/cicek-buketleri/">Çiçek Buketleri</a></li>
+            </ul>
+            <ul class="o-subMenu col-12 col-lg-2">
+              <li class="o-subMenu__item--title">TASARIM</li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/cicek-aranjmanlari/">Aranjmanlar</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/vazo-cicekleri/">Cam Vazolar</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/ayakli-sepet/">Ayaklı Sepet</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/ferforje/">Ferforje</a></li>
+              <li class="o-subMenu__item"><a class="o-subMenu__item--link" href="/cicek/celenk/">Çelenk</a></li>
+            </ul>
+            <div class="col-12 col-lg-4 d-none d-lg-flex justify-content-end">
+              <div class="o-menuBanner -firstBanner">
+                <a class="o-menuBanner__link" href="/cicek-sepeti/bahar-esintisi-papatyalar-ve-guller/" rel="nofollow"><img class="o-menuBanner__link--img" src="//cdn.ciceksepeti.net/img/banners/cs295.jpg" alt="Bahar Esintisi Papatyalar ve Güller" /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-birthday" href="/cicek/dogum-gunu-cicekleri/" rel="nofollow">DOĞUM GÜNÜ</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-love" href="/cicek/sevgiliye-cicek/" rel="nofollow">SEVGİ &amp; AŞK</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-clover" href="/cicek/cicek-buketleri/" rel="nofollow">BUKETLER</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-cherry" href="/meyve-cicek/">MEYVE ÇİÇEK</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-delivery d-flex d-md-none" href="/takip/" rel="nofollow">SİPARİŞ TAKİBİ</a></li>
+      <!--
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-user d-flex d-md-none" href="/uye-girisi.asp" rel="nofollow">ÜYE GİRİŞİ</a></li>
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-plus d-flex d-md-none" href="/uye-ol.asp" rel="nofollow">ÜYE OL</a></li>
+      -->
+      <li class="o-megaMenu__item"><a class="o-megaMenu__item--link cmi-loacation d-flex d-md-none" href="/ciceksepeti-iletisim/" rel="nofollow">BİZE ULAŞIN</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- endinject -->
+<!-- HEADER ENDS -->
+<div class="container">
+<!-- container başlangıç -->
+
+
+<div class="m-404__content text-center mt-10">
+<br /><h1 class="active-color">Aradığınız Sayfa Bulunamamıştır!</h1>
+<p>
+Üzgünüz! Aradığınız sayfa bulunamadı. 
+<br />Eğer web adresini kendiniz girdiyseniz lütfen kontrol edip, doğru girdiğinizden emin olunuz. 
+<br />Eğer bir linke tıklayarak bu sayfaya ulaştıysanız, link hatalı olabilir. 
+<br />Yaşadığınız sorun için özür dileriz!
+</p><br /><br />
+</div>
+
+
+<!-- ürün listeleri -->
+<div class="o-productList mb-30">
+<div class="o-productList__body">
+<!-- inject:_product-item -->
+<div class="row">
+<div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/kir-cicekleri-vazosu/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs288.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs288.jpg" alt="Kır Çiçekleri Vazosu" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Kır Çiçekleri Vazosu</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">66</span><div class="o-productCard__priceContent--currency"><span>,67 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 72,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/seramikte-beyaz-orkide/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs087.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs087.jpg" alt="Çiftli Beyaz Orkide" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Çiftli Beyaz Orkide</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">158</span><div class="o-productCard__priceContent--currency"><span>,33 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 171,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/kalpte-papatyalar-ve-guller/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><div class="o-productCard__badge"><div class="o-productCard__badge--item -opportunity">FIRSAT</div></div><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs298.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs298.jpg" alt="Kalpte Papatyalar ve Güller" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Kalpte Papatyalar ve Güller</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">74</span><div class="o-productCard__priceContent--currency"><span>,07 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 80,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/zarif-pembe-gerbera-cicegi/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs302.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs302.jpg" alt="Zarif Pembe Gerbera Çiçeği" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Zarif Pembe Gerbera Çiçeği</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">56</span><div class="o-productCard__priceContent--currency"><span>,48 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 61,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/fanusta-kirmizi-guller/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><div class="o-productCard__badge"><div class="o-productCard__badge--item -opportunity">FIRSAT</div></div><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs057.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs057.jpg" alt="Fanusta Kırmızı Güller" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Fanusta Kırmızı Güller</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">69</span><div class="o-productCard__priceContent--currency"><span>,44 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 75,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/kalpli-vazoda-15-kirmizi-gul/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs101.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs101.jpg" alt="Kalpli Vazoda 15 Kırmızı Gül" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Kalpli Vazoda 15 Kırmızı Gül</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">101</span><div class="o-productCard__priceContent--currency"><span>,85 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 110,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/bahar-cicekleri-vazosu/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs291.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs291.jpg" alt="Bahar Çiçekleri Vazosu" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Bahar Çiçekleri Vazosu</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">66</span><div class="o-productCard__priceContent--currency"><span>,67 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 72,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/spatifilyum-bitkisi/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs049.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs049.jpg" alt="Spatifilyum Bitkisi" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Spatifilyum Bitkisi</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">81</span><div class="o-productCard__priceContent--currency"><span>,48 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 88,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/7-kirmizi-gul-buketi/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs072.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs072.jpg" alt="7 Kırmızı Gül Buketi" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">7 Kırmızı Gül Buketi</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">61</span><div class="o-productCard__priceContent--currency"><span>,11 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 66,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/meyve-cikolata-kurabiye/mutluluk-sebebi-tatlar/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs324.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs324.jpg" alt="Mutluluk Sebebi Tatlar" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Mutluluk Sebebi Tatlar</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">69</span><div class="o-productCard__priceContent--currency"><span>,44 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 75,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/cift-dalli-mor-orkide/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs359.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs359.jpg" alt="Çift Dallı Mor Orkide" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Çift Dallı Mor Orkide</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">161</span><div class="o-productCard__priceContent--currency"><span>,11 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 174,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/beyaz-gerbera-vazosu/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs294.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs294.jpg" alt="Beyaz Gerbera Vazosu" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Beyaz Gerbera Vazosu</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">56</span><div class="o-productCard__priceContent--currency"><span>,48 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 61,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/cam-vazoda-5-gul/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs001.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs001.jpg" alt="Cam Vazoda 5 Gül" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Cam Vazoda 5 Gül</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">62</span><div class="o-productCard__priceContent--currency"><span>,04 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 67,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/akvaryumda-kirmizi-beyaz-guller/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs058.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs058.jpg" alt="Kırmızı Beyaz Güller" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Kırmızı Beyaz Güller</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">84</span><div class="o-productCard__priceContent--currency"><span>,26 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 91,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/ayicikli-12-kirmizi-gul/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs281.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs281.jpg" alt="Ayıcıklı 12 Kırmızı Gül " /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Ayıcıklı 12 Kırmızı Gül </strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">116</span><div class="o-productCard__priceContent--currency"><span>,67 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 126,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/vazoda-karisik-cicekler/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs047.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs047.jpg" alt="Vazoda Karışık Çiçekler" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Vazoda Karışık Çiçekler</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">66</span><div class="o-productCard__priceContent--currency"><span>,67 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 72,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/vazoda-9-kirmizi-gul/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs003.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs003.jpg" alt="Vazoda 9 Kırmızı Gül" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Vazoda 9 Kırmızı Gül</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">75</span><div class="o-productCard__priceContent--currency"><span>,00 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 81,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/vazoda-7-kirmizi-gul/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs002.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs002.jpg" alt="Vazoda 7 Kırmızı Gül" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Vazoda 7 Kırmızı Gül</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">68</span><div class="o-productCard__priceContent--currency"><span>,52 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 74,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/beyaz-lilyum-gul-cicegi/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs083.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs083.jpg" alt="Lilyum Gül Aranjmanı" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Lilyum Gül Aranjmanı</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">97</span><div class="o-productCard__priceContent--currency"><span>,22 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 105,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/gulumseten-7-kirmizi-gul/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs301.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs301.jpg" alt="Gülümseten 7 Kırmızı Gül " /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Gülümseten 7 Kırmızı Gül </strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">96</span><div class="o-productCard__priceContent--currency"><span>,30 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 104,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/vazoda-beyaz-papatyalar/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs068.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs068.jpg" alt="Vazoda Beyaz Papatyalar" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Vazoda Beyaz Papatyalar</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">62</span><div class="o-productCard__priceContent--currency"><span>,04 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 67,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/renkli-husnuyusuf-cicegi/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs289.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs289.jpg" alt="Renkli Hüsnüyusuf Çiçeği" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Renkli Hüsnüyusuf Çiçeği</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">57</span><div class="o-productCard__priceContent--currency"><span>,41 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 62,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/renk-cumbusu-husnuyusuf-cicegi/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs300.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs300.jpg" alt="Renkli Hüsnüyusuf Çiçeği" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">Renkli Hüsnüyusuf Çiçeği</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">58</span><div class="o-productCard__priceContent--currency"><span>,33 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 63,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div><div class="o-productCard col-12 col-md-4 col-lg-3 col-xxl-2"><a href="/cicek-sepeti/11-kirmizi-gul-buketi/" class="o-productCard__link"><figure class="o-productCard__figure col-md-12 col-5"><img class="o-productCard__figure--img b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="//cdn.ciceksepeti.net/cicek-resim/m/cs074.jpg" data-src-small="//cdn.ciceksepeti.net/cicek-resim/s/cs074.jpg" alt="11 Kırmızı Gül Buketi" /></figure><div class="o-productCard__content col-md-12 col-7"><strong class="o-productCard__name">11 Kırmızı Gül Buketi</strong><div class="o-productCard__price"><div class="o-productCard__priceContent"><div class="o-productCard__priceContent--salePrice"><span class="o-productCard__priceContent--value">74</span><div class="o-productCard__priceContent--currency"><span>,07 TL</span> <span> +KDV</span></div></div></div><div class="o-productCard__price--kdv">KDV Dahil: 80,00 TL</div></div><div class="o-productCard__features"><span class="o-productCard__features--item -delivery -green">Aynı Gün Teslimat</span></div></div></a></div>
+</div>
+<!-- endinject -->
+</div>
+</div>
+<!-- ürün listeleri BİTİŞ -->
+
+
+<!-- container BİTİŞ-->
+</div>
+
+
+<!-- FOOTER -->
+<button class="scrollTop cmi-arrow-up" id="scrollToTop" type="button"></button>
+<footer class="o-footer">
+<div class="o-footer__header">
+<div class="container">
+    <div class="row">
+    <div class="o-maillist col-12 col-lg-5">
+        <div class="o-maillist__header">
+        <span class="o-maillist__header--title">Bizden Haberler</span>
+        <p class="o-maillist__header--text">İndirim kodu ve güncel kampanyalarımız ilk size gelsin.</p>
+        </div>
+        <div class="o-maillist__body">
+        <form class="o-maillist__form" action="/haberler.asp" method="post">
+            <input class="o-maillist__form--input" type="text" id="BultenEmail" name="BultenEmail" placeholder="E-posta adresiniz" />
+            <button class="o-maillist__form--btn" type="submit">KAYDOL</button>
+        </form>
+        </div>
+    </div>
+    <div class="col-2"></div>
+    <div class="o-social col-12 col-lg-5">
+        <div class="o-social__header">
+        <span class="o-social__header--title">Bizi Takip Edin</span>
+        <p class="o-social__header--text">Harika fırsatların tadını çıkarın!.</p>
+        </div>
+        <div class="o-social__body">
+        <ul class="o-social__icons">
+            <li class="o-social__icons--item"><a class="o-social__icons--link cmi-facebook" href="https://www.facebook.com/" rel="nofollow" target="_blank"></a></li>
+            <li class="o-social__icons--item"><a class="o-social__icons--link cmi-twitter" href="https://twitter.com/" rel="nofollow" target="_blank"></a></li>
+            <li class="o-social__icons--item"><a class="o-social__icons--link cmi-instagram" href="https://www.instagram.com/" rel="nofollow" target="_blank"></a></li>
+            <li class="o-social__icons--item"><a class="o-social__icons--link cmi-youtube" href="https://www.youtube.com/" rel="nofollow" target="_blank"></a></li>
+        </ul>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="container">
+<div class="o-footer__body row justify-content-md-center">
+    <div class="col-12 col-lg-7">
+    <div class="row">
+        <div class="col-12 col-lg-3">
+        <h3 class="o-footer__menu--title accordionHeader">Çiçeğe Dair</h3>
+        <ul class="o-footer__menu accordionContent">            
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/cicek-sepeti/">Şehirlere Çiçek</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/cicek-gonder/">Çiçek Gönder</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/cicek-market/">Çiçek Market</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/cicekci/">Çiçekçi</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/cicek/">Çiçek</a></li>
+        </ul>
+        </div>
+        <div class="col-12 col-lg-3">
+        <h3 class="o-footer__menu--title accordionHeader">Kurumsal</h3>
+        <ul class="o-footer__menu accordionContent">
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/hakkimizda.asp">Hakkımızda</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/odeme-sekli.asp">Nasıl Ödeyeceğim</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/indirim/">İndirim</a></li>
+        </ul>
+        </div>
+        <div class="col-12 col-lg-3">
+        <h3 class="o-footer__menu--title accordionHeader">Bize Ulaşın</h3>
+        <ul class="o-footer__menu accordionContent">
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/ciceksepeti-iletisim/">İletişim</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/sirket-bilgileri/">Şirket Bilgileri</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/site-haritasi/">Site Haritası</a></li>
+        </ul>
+        </div>
+        <div class="col-12 col-lg-3">
+        <h3 class="o-footer__menu--title accordionHeader">Politikalarımız</h3>
+        <ul class="o-footer__menu accordionContent">
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/gizlilik-politikasi/" rel="nofollow">Gizlilik Politikası</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/kvkk-aydinlatma-metni/" rel="nofollow">KVKK Aydınlatma Metni</a></li>
+            <li class="o-footer__menu--item"><a class="o-footer__menu--link" href="/cerez-politikasi/" rel="nofollow">Çerez Politikası</a></li>
+        </ul>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="o-footer__bottom">
+    <div class="container">
+    <div class="row">
+        <div class="col-12 o-footer__order">
+            <p class="o-footer__order--text">
+            Çiçek Sepeti olarak her günü sizlere daha özel kılacak ve sevdiklerinize dahada yakınlaştıracak yüzlerce çeşit çiçek sunmanın gururunu yaşıyoruz. Geniş çiçekçi ağımız ile Türkiye'nin dört bir tarafına çiçek göndermeyi hızlı şekilde yapabilirsiniz. Vereceğiniz çiçek siparişi çiçekçilik konusunda deneyimli çiçekçiler tarafından hazırlanıp çiçeksepeti güvencesiyle gönderilecektir.
+            </p>
+        </div>
+        <div class="col-12 o-footer__logo">
+        <img class="o-footer__logo--img" src="//cdn.ciceksepeti.net/img/ciceksepeti-logo.svg" alt="Çiçek Sepeti Logo" height="40" />
+        <span class="o-footer__logo--text">Güvenilir Çiçekçi, Çiçek Sepeti İle Türkiye'ye Çiçek Gönder. Copyright &copy; 2021 ciceksepeti.net</span>
+        </div>
+    </div>
+    </div>
+</div>
+
+</div>
+</footer>
+<!-- FOOTER ENDS -->
+<!-- mainwrap BİTİŞ -->
+</div>
+
+<script src="//cdn.ciceksepeti.net/js/lib/vue.min.js"></script>
+<script src="//cdn.ciceksepeti.net/js/lib/es6-promise.auto.min.js"></script>
+<script src="//cdn.ciceksepeti.net/js/lib/axios.min.js"></script>
+<script src="//cdn.ciceksepeti.net/js/lib/blazy.min.js"></script>
+
+<script src="//cdn.ciceksepeti.net/js/global/search.min.js?v=1.6.1"></script>
+<script src="//cdn.ciceksepeti.net/js/app/product-list-content.min.js?v=1.6.1"></script>
+<script src="//cdn.ciceksepeti.net/js/global/global.min.js?v=1.6.1"></script>
+<script src="//cdn.ciceksepeti.net/js/global/megamenu.min.js?v=1.6.1"></script>
+
+</body>
+</html>

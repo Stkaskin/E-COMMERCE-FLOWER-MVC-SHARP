@@ -1,0 +1,92 @@
+﻿<html lang="tr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1254">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+    <link rel="stylesheet" href="~/sepetfile/css/main.min.css">
+    <link rel="stylesheet" href="~/sepetfile/css/customer.min.css">
+    <link rel="stylesheet" href="~/sepetfile/css/delivery.min.css">
+
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Çiçek Siparişi - Kullanıcı Girişi - Çiçek Sepeti</title>
+    <meta name="robots" content="noindex,nofollow">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-3679767-1');
+        gtag('config', 'AW-1018293527');
+        gtag('config', 'AW-595190987');
+    </script>
+
+
+</head>
+
+<body>
+  
+<div id="mainWrapper" data-login="login" class="mainContent">
+    <!----> <header id="header" class="o-headerSimple"><a class="o-headerSimple__backMobile cmi-left"></a> <div class="o-headerSimple__col"><a href="/" class="o-headerSimple__logo"><img src="//cdn.ciceksepeti.net/img/ciceksepeti-logo-white.svg" alt="Çiçek Sepeti Logo" height="40" class="o-headerSimple__logo--img"></a></div></header> <div class="container">
+    @RenderBody()
+</div> <button id="scrollToTop" type="button" class="scrollTop cmi-arrow-up" style="display: none;"></button>
+</div>
+
+<script src="//cdn.ciceksepeti.net/js/lib/vue.min.js"></script>
+<script src="//cdn.ciceksepeti.net/js/lib/es6-promise.auto.min.js"></script>
+<script src="//cdn.ciceksepeti.net/js/lib/axios.min.js"></script>
+<script src="//cdn.ciceksepeti.net/js/lib/vee-validate.min.js"></script>
+<script src="//cdn.ciceksepeti.net/js/lib/vee-validate-locale-tr.js"></script>
+<script>
+    Vue.use(VeeValidate, {
+        events: 'change',
+        locale: 'tr'
+    });
+</script>
+
+<script src="//cdn.ciceksepeti.net/js/global/notification.min.js"></script>
+<script src="//cdn.ciceksepeti.net/js/global/summary.min.js?v=1.6.1"></script>
+<script src="//cdn.ciceksepeti.net/js/app/login.min.js?v=1.6.1"></script>
+<script src="//cdn.ciceksepeti.net/js/global/global.min.js?v=1.6.1"></script>
+<script src="~/sepetfile/js/app/delivery.min.js"></script>
+<!--<script src="//cdn.ciceksepeti.net/js/global/simple-header.min.js?v=1.6.1"></script>-->
+
+
+
+    <script>
+
+    function submitsend() {
+        var btn = document.getElementById("Submit-btn");
+        btn.click();
+    }
+    //function SendCmt() {
+    //    alert("");
+    //    $.post($(this).attr('Control'), $(this).serialize(), function (json) {
+    //        alert(json);
+    //    }, 'json');
+    //    return false; // important to have this
+    //}
+
+</script>
+
+<script src="//cdn.ciceksepeti.net/js/app/delivery.min.js?v=1.6.1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js" integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A==" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.js" integrity="sha512-HNbo1d4BaJjXh+/e6q4enTyezg5wiXvY3p/9Vzb20NIvkJghZxhzaXeffbdJuuZSxFhJP87ORPadwmU9aN3wSA==" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+﻿
+@{
+    ViewBag.Title = "Information";
+    Layout = "~/Views/LayoutPage/LayoutOrderPage.cshtml";
+}
+
+
+<div class="row mb-30">
+
+    <div class="col-12">
+        <div class="m-progress">
+            <div class="m-progress__step">
+                <div class="m-progress__bar">
+                    <div class="m-progress__barActiveStep -step3">
+                    </div>
+                </div>
+                <div class="m-progress__item -active">
+                    <span class="m-progress__disc cmi-check">
+                    </span>
+                    <span class="m-progress__name">
+                        Sipariş Bilgileri
+                    </span>
+                </div>
+                <div class="m-progress__item -active">
+                    <span class="m-progress__disc cmi-check">
+                    </span>
+                    <span class="m-progress__name">
+                        Kart Notu
+                    </span>
+                </div>
+                <div class="m-progress__item  -active">
+                    <span class="m-progress__disc cmi-circle">
+                    </span>
+                    <span class="m-progress__name">
+                        Fatura Bilgileri
+                    </span>
+                </div>
+                <div class="m-progress__item">
+                    <span class="m-progress__disc">
+                    </span>
+                    <span class="m-progress__name">
+                        Ödeme
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-7 col-lg-8">
+        <div class="o-checkoutForm">
+            <div class="o-checkoutForm__header">
+                <h3 class="o-checkoutForm__title">
+                    Fatura Bilgileri
+                </h3>
+            </div>
+            <div class="o-checkoutForm__body">
+                <form action="/Order/InformationControl/" method="post" class="o-form">
+                    <div class="o-form__groupIcon -required">
+                        <input type="text" id="gonderen_ad_soyad" name="name" maxlength="75" data-vv-as="Adınız Soyadınız" required="required" class="m-textbox" aria-required="true" aria-invalid="false">
+                        <label for="gonderen_ad_soyad" class="o-form__label">
+                            Ad Soyad
+                        </label>
+                        <i class="o-form__icon cmi-user">
+                        </i>
+                    </div>
+                    <!---->
+                    <div class="o-form__groupIcon -required">
+                        <input type="text" pattern="[0-9]*" id="telno" name="tel" maxlength="11" data-vv-as="Telefon Numarası" required="required" class="m-textbox" aria-required="true" aria-invalid="false">
+                        <label for="gonderen_telefon" class="o-form__label">
+                            Telefon Numarası
+                        </label>
+                        <i class="o-form__icon cmi-phone">
+                        </i>
+                    </div>
+                    <!---->
+                    <div class="o-form__groupIcon -required">
+                        <input type="text" id="gonderen_email" name="mail" maxlength="100" data-vv-as="E-Posta" required="required" class="m-textbox" aria-required="true" aria-invalid="false" >
+                        <label for="gonderen_email" class="o-form__label">
+                            E-Posta
+                        </label>
+                        <i class="o-form__icon cmi-mail">
+                        </i>
+                    </div>
+                    <!---->
+                    <div class="o-form__group">
+                        <input type="text" id="prmcode" name="prmcode" maxlength="10" required="required" class="m-textbox">
+                        <label for="prmcode" class="o-form__label">
+                            İndirim Kodu (İsteğe Bağlı)
+                        </label>
+                    </div>
+                    <div class="o-form__group -required">
+                        <div class="m-select -large -full">
+                            <select id="odeme" name="paytype" data-vv-as="Ödeme Tercihi" required="required" class="m-select__control" aria-required="true" aria-invalid="false">
+                                <option value="" selected="selected">
+                                    Ödeme Tercihiniz
+                                </option>
+                                <option value="KKR">
+                                    Kredi Kartı İle Ödeme
+                                </option>
+                                <option value="KKR3D">
+                                    Banka / Maaş Kartı İle Ödeme
+                                </option>
+                                <option value="HVL">
+                                    Havale / EFT ile Ödeme
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <!---->
+                    <h3 class="o-form__subTitle">
+                        Faturalandırma
+                    </h3>
+                    <div class="row align-items-center">
+                        <div class="col-6 col-lg-4">
+                            <div class="o-form__group">
+                                <div class="o-radio">
+                                    <input type="radio" id="bireysel" name="type" data-vv-as="Faturalandırma" value="bireysel" checked="checked" class="o-radio__input" aria-required="true" aria-invalid="false">
+                                    <label for="bireysel" class="o-radio__label">
+                                        Bireysel
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-6">
+                            <div class="o-form__group">
+                                <div class="o-radio">
+                                    <input type="radio" id="kurumsal" name="type" value="kurumsal" class="o-radio__input" aria-required="true" aria-invalid="false">
+                                    <label for="kurumsal" class="o-radio__label">
+                                        Firma/Kurum
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                    <!---->
+                    <div class="o-form__group o-paymentForm__agreement mt-10 mb-0">
+                        <div class="o-checkbox">
+                            <input type="checkbox" id="agreementSmsEmail" name="agreementSmsEmail" data-vv-as="Sözleşme" class="o-checkbox__input">
+                            <label for="agreementSmsEmail" class="o-checkbox__label">
+                                ciceksepeti.net'in tarafıma
+                                <a href="javascript:void(0)">
+                                    ticari elektronik ileti
+                                </a> göndermesine izin veriyorum.
+                            </label>
+                        </div>
+                        <div class="o-checkbox mb-0">
+                            <input type="checkbox" id="agreementPersonal" name="agreementPersonal" data-vv-as="Sözleşme" class="o-checkbox__input">
+                            <label for="agreementPersonal" class="o-checkbox__label" >
+                                Kişisel bilgi toplama prosedürü
+                                <a href="javascript:void(0)">
+                                    gizlilik politikası
+                                </a>'nı okudum ve kabul ediyorum.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="o-summary__buttons">
+                        <input name="get_rsv_id" type="hidden" value="1073232" id="get_rsv_id">
+                        <input name="strKey" type="hidden" value="HXIgK" id="strKey">
+                        <input name="upm" type="hidden" value="101" id="upm">
+                        <input name="uyelik" type="hidden" value="1" id="uyelik">
+                        <input name="faturalama_tipi" type="hidden" value="bireysel" id="faturalama_tipi">
+                        <input name="pval" type="hidden" value="1" id="pval">
+                    </div>
+                    <input id="Submit-btn" type="submit" value="" style="background-color:transparent;" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-5 col-lg-4">
+
+        <div class="o-summary__buttons">
+            <button type="button" class="o-button -payment -nextBtn cmi-right-arrow" onclick="submitsend()">
+                Devam Et
+
+            </button>
+
+        </div>
+        <div class="o-summary mt-10">
+
+            <div class="o-summary__header">
+                <h3 class="o-summary__title">
+                    Sipariş Özeti
+                </h3>
+            </div>
+            <div class="o-summary__body">
+
+                <div class="o-summary__item">
+
+                    <div class="o-summary__itemBody">
+
+                        <div class="o-summary__itemProduct">
+                            <span class="o-summary__itemCategory">
+                                Ürün
+                            </span>
+                            <strong class="o-summary__itemTitle">
+                                Kutuda 3 Gül
+                            </strong>
+                        </div>
+                        <div class="o-summary__itemPrice">
+                            64,00 TL
+
+                        </div>
+
+                    </div>
+                    <div class="o-summary__additionalItem">
+
+                        <span class="o-summary__additionalTitle">
+                            Teslimat Tarihi:
+
+                        </span>
+                        <span class="o-summary__additionalPrice">
+                            16 Mayıs 2021 Pazar
+
+                        </span>
+
+                    </div>
+
+                </div>
+                <div class="o-summary__item">
+                    <div class="o-summary__itemBody">
+                        <div class="o-summary__itemProduct">
+                            <span class="o-summary__itemCategory">
+                                Gönderim Yeri
+                            </span>
+                            <strong class="o-summary__itemTitle">
+                                4. Levent
+                                <br>İstanbul - Avrupa
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="o-summary__footer">
+                <div class="o-summary__total">
+                    <div class="o-summary__totalName">
+                        Toplam Fiyat
+                        <span>
+                            (KDV Dahil)
+                        </span>
+                    </div>
+                    <div class="o-summary__totalPrice">
+                        64,00 TL
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="o-summary__buttons">
+            <button type="button" class="o-button -payment -nextBtn cmi-right-arrow" onclick="submitsend()">
+                Devam Et
+
+            </button>
+        </div>
+
+</div>
+<!---->
+<!---->
+
+</div>
+
